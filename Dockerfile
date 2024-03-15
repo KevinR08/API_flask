@@ -7,8 +7,9 @@ WORKDIR /app
 COPY . /app
 
 # Instalar las dependencias necesarias
-RUN pip install --no-cache-dir Flask numpy tensorflow keras flask-cors Pillow
+RUN pip install --no-cache-dir Flask numpy tensorflow keras flask-cors Pillow waitress
 
 EXPOSE 5000
 
-CMD ["python", "API.py"]
+# CMD ["python", "API.py"]
+CMD ["waitress-serve", "--port=5000", "API:app"]
