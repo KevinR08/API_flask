@@ -11,4 +11,4 @@ RUN pip install --no-cache-dir Flask numpy tensorflow keras flask-cors
 
 EXPOSE 5000
 
-CMD ["python", "api.py"]
+CMD ["python", "API.py"]
